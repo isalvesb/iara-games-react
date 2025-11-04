@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Cadastro from "./pages/cadastro.jsx";
 import Login from "./pages/login.jsx";
 import "./index.css";

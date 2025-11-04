@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import {
   faEye,
   faEyeSlash,
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-
 import Logo from "../assets/logo.svg";
 import "./cadastro.css";
 import { auth } from "../services/firebase";
@@ -107,9 +107,10 @@ function Login() {
             </li>
           </ul>
           {/* ÍCONE PERFIL - DIREITA */}
-          <Link className="perfil" to="/login" onClick={closeMenu}>
-            <i className="fa-solid fa-circle-user"></i>
-          </Link>
+        <Link className="perfil" to="/login" onClick={closeMenu}>
+          <FontAwesomeIcon icon={faUserCircle} className="icone-perfil" />
+        </Link>
+
         </nav>
       </header>
 

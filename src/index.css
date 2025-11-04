@@ -134,15 +134,16 @@ header nav {
 }
 
 /* PERFIL RESPONSIVO */
-.perfil i {
+.perfil .icone-perfil {
   color: var(--secondary-azul-iara);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 3rem;
   transition: transform 0.5s ease-in-out;
 }
 
-.perfil i:hover {
-  transform: scale(1.1);
+.perfil .icone-perfil:hover {
+  transform: scale(1.2);
 }
+
 
 /* MAIN CONTENT */
 main {

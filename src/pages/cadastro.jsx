@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
   faEyeSlash,
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import Logo from "../assets/logo.svg";
 import "./cadastro.css";
 import { auth } from "../services/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+
 
 function Cadastro() {
   const [nome, setNome] = useState("");
@@ -113,9 +115,10 @@ function Cadastro() {
             </li>
           </ul>
           {/* ÍCONE PERFIL - DIREITA */}
-          <Link className="perfil" to="/login" onClick={closeMenu}>
-            <i className="fa-solid fa-circle-user"></i>
+         <Link className="perfil" to="/login" onClick={closeMenu}>
+          <FontAwesomeIcon icon={faUserCircle} className="icone-perfil" />
           </Link>
+
         </nav>
       </header>
 
