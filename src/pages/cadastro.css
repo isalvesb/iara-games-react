@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+main .container {
+  background: var(--gradiente-1);
+  border-radius: 2rem;
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+  max-width: min(400px, 90vw);
+  width: 90%;
+  min-height: min(450px, 80vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin: 1rem auto;
+  position: relative;
+}
+
+/* ==== TOAST ==== */
+.toast-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+main .container h2 {
+  text-align: center;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+}
+
+main .form-control {
+  background-color: var(--base-0);
+  border: 0;
+  height: clamp(2.2rem, 5vh, 2.5rem);
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  width: 100%;
+}
+
+main .form-control::placeholder {
+  color: var(--base-40);
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--base-0);
+  align-items: center;
+}
+
+.input-group input {
+  flex: 1;
+  border: 0;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  min-width: 0;
+}
+
+.eye-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  color: var(--base-60);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.botao {
+  margin: 0 auto;
+  min-width: min(250px, 80%);
+  max-width: 400px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-verde-pastel);
+  color: var(--primary-verde-escuro);
+  padding: clamp(0.5rem, 2vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+  border: none;
+  border-radius: 3rem;
+  box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: var(--primary-verde-menta);
+  transform: scale(1.05);
+  color: var(--base-0);
+}
+
+.cadastro-link {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: var(--base-0);
+}
+
+.cadastro-link a {
+  color: var(--primary-verde-pastel);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cadastro-link a:hover {
+  color: var(--secondary-azul);
+  text-decoration: underline;
+}
+
+.popup {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: clamp(0.5rem, 2vw, 0.6rem) clamp(1rem, 3vw, 1.2rem);
+  border-radius: 8px;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  animation: fadeInOut 3s ease forwards;
+  z-index: 1000;
+  text-align: center;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.popup.sucesso {
+  background-color: #4caf50;
+}
+
+.popup.erro {
+  background-color: #f44336;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+/* ============ MEDIA QUERIES ESPECÍFICAS ============ */
+
+@media (max-width: 768px) {
+  main .container {
+    padding: 1.2rem 1.5rem;
+    max-width: min(300px, 75vw);
+    min-height: min(400px, 75vh);
+    gap: 1.2rem;
+  }
+
+  .input-group {
+    flex-direction: row;
+  }
+
+  .botao {
+    min-width: 70%;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main .container {
+    padding: 1rem 1.2rem;
+    border-radius: 1.5rem;
+    min-height: min(380px, 70vh);
+    gap: 1rem;
+  }
+
+  main .form-control {
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
+
+  .input-group input {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .eye-icon {
+    padding: 0 0.6rem;
+  }
+
+  .botao {
+    min-width: 85%;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .popup {
+    bottom: -60px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 320px) {
+  main .container {
+    padding: 0.8rem 1rem;
+    border-radius: 1.2rem;
+  }
+
+  main .form-control {
+    height: 2rem;
+    font-size: 0.85rem;
+  }
+
+  .botao {
+    min-width: 90%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

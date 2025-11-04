@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --base-0: #f1f1f4;
+  --base-5: #fcfcfc;
+  --base-10: #f1f1f4;
+  --base-20: #cccccc;
+  --base-40: #999999;
+  --base-60: #666666;
+  --primary-verde-pastel: #ecf4ee;
+  --primary-verde-suave: #b9d2c3;
+  --primary-verde-menta: #9dcbb3;
+  --primary-verde-medio: #5c9d8c;
+  --primary-verde-escuro: #226b5f;
+  --primary-verde-cabelo: #104434;
+  --secondary-bege: #fffdfa;
+  --secondary-rosa-claro: #fadada;
+  --secondary-azul: #021e4d;
+  --secondary-azul-iara: #03318c;
+  --secondary-vermelho: #730202;
+  --secondary-laranja-pessego: #f2aa6b;
+  --background-1: hsla(40, 100%, 99%, 0.9);
+  --background-2: hsla(140, 27%, 94%, 0.9);
+  --gradiente-1: linear-gradient(0deg, #2e6b6b 0%, #6ab18e 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(
+      to bottom,
+      var(--background-1) 15%,
+      var(--background-2) 50%,
+      var(--background-1) 95%
+    ),
+    url("./assets/background-principal.svg") no-repeat bottom / cover fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER RESPONSIVO */
+header {
+  min-height: 15vh;
+  background: url(./assets/background-superior.svg) repeat-x left top / auto
+    100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* LOGO RESPONSIVA */
+.logo img {
+  transition: transform 0.5s ease-in-out;
+  width: clamp(120px, 15vw, 150px);
+  height: auto;
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* MENU RESPONSIVO */
+.menu {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 5rem);
+  list-style: none;
+  font-weight: 500;
+  color: var(--primary-verde-cabelo);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--primary-verde-cabelo);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  white-space: nowrap;
+}
+
+.inativo {
+  transition: transform 0.5s ease-in-out;
+}
+
+.inativo:hover {
+  transform: scale(1.1);
+}
+
+.ativo a {
+  color: var(--primary-verde-escuro);
+  background-color: var(--primary-verde-pastel);
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  box-shadow: 0 0.2rem 0.2rem 0 var(--primary-verde-medio);
+}
+
+/* PERFIL RESPONSIVO */
+.perfil i {
+  color: var(--secondary-azul-iara);
+  font-size: clamp(2rem, 4vw, 3rem);
+  transition: transform 0.5s ease-in-out;
+}
+
+.perfil i:hover {
+  transform: scale(1.1);
+}
+
+/* MAIN CONTENT */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  min-height: 70vh;
+}
+
+/* Container principal das páginas */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FOOTER RESPONSIVO */
+footer {
+  margin-top: auto;
+}
+
+.footer {
+  background: var(--gradiente-1);
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.decoracao {
+  background: url(./assets/background-inferior.svg) repeat-x top center;
+  height: clamp(100px, 15vw, 200px);
+  width: 100%;
+}
+
+.linha {
+  border: 0.1rem solid var(--primary-verde-menta);
+  width: 100%;
+}
+
+.icones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.icones a {
+  color: var(--base-0);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icones a:hover {
+  color: var(--secondary-azul);
+  transform: scale(1.1);
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1rem;
+}
+
+.links a {
+  color: var(--base-0);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--secondary-azul);
+}
+
+.legal {
+  color: var(--base-0);
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  width: 100%;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.contato {
+  color: var(--secondary-bege);
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.contato a {
+  color: var(--primary-verde-cabelo);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contato a:hover {
+  color: var(--secondary-azul);
+}
+
+.contato-botao {
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------- ACESSIBILIDADE --------------- */
+a:focus,
+button:focus,
+[role="button"]:focus,
+[role="menuitem"]:focus {
+  outline: 0.2rem solid var(--secondary-azul);
+  outline-offset: 0.2rem;
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  header nav {
+    width: 95%;
+    gap: 0.5rem;
+  }
+
+  .menu {
+    gap: 1rem;
+  }
+
+  .footer {
+    padding: 1.5rem 3%;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  header {
+    min-height: 12vh;
+    padding: 0.5rem 0;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--gradiente-1);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px; /* ⬅️ AINDA MAIS PARA CIMA */
+    gap: 1rem; /* ⬅️ MENOS ESPAÇO ENTRE ITENS */
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+
+  .menu a {
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .perfil {
+    order: 2;
+  }
+
+  main {
+    padding: 1rem;
+    min-height: 65vh;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .informacoes {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .legal {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .menu {
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    font-size: 0.75rem;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .perfil i {
+    font-size: 1.8rem;
+  }
+
+  .footer {
+    padding: 1rem 2%;
+    gap: 1rem;
+  }
+
+  .icones {
+    justify-content: center;
+  }
+
+  .links a {
+    font-size: 0.75rem;
+  }
+}
+
+/* Container do formulário responsivo */
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ============ MENU HAMBURGUER COM FONTAWESOME ============ */
+
+/* Botão Hamburguer - ESCONDIDO NO DESKTOP */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1000;
+  position: relative;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Ícone do menu */
+.menu-icon {
+  font-size: 1.8rem; /* TAMANHO DO ÍCONE */
+  color: var(--secondary-azul-iara); /* COR AZUL */
+  transition: all 0.3s ease;
+  height: 1rem;
+}
+
+/* Efeitos hover */
+.menu-toggle:hover {
+  background-color: var(--primary-verde-pastel);
+  transform: scale(1.1);
+}
+
+.menu-toggle:hover .menu-icon {
+  color: var(--primary-verde-escuro);
+}
+
+/* Quando o menu está aberto */
+.menu-toggle.active .menu-icon {
+  color: var(--primary-verde-cabelo); /* BRANCO QUANDO MENU ABERTO */
+}
+
+/* Overlay para mobile */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* ============ MEDIA QUERIES PARA MOBILE ============ */
+
+@media (max-width: 768px) {
+  /* MOSTRAR BOTÃO HAMBURGUER APENAS NO MOBILE */
+  .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+    margin-left: auto;
+  }
+
+  /* AJUSTAR LAYOUT DO HEADER NO MOBILE */
+  header nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .perfil {
+    order: 2;
+    margin-left: auto;
+  }
+
+  /* MENU MOBILE */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--gradiente-1);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    gap: 2rem;
+    z-index: 999;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+
+  /* Menu quando aberto no mobile */
+  .menu.mobile-open {
+    right: 0;
+    display: flex !important;
+  }
+
+  /* Itens do menu mobile */
+  .menu li {
+    width: 80%;
+    text-align: center;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 1rem;
+    color: var(--base-0) !important;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+  }
+
+  .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  /* Esconder menu quando não está aberto no mobile */
+  .menu:not(.mobile-open) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    width: 85%;
+  }
+
+  .menu li a {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  header nav {
+    padding: 0 0.5rem;
+  }
+
+  /* ÍCONE MENOR EM TELAS PEQUENAS */
+  .menu-icon {
+    font-size: 1.5rem;
+  }
+}
