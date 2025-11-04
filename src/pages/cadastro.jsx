@@ -1,17 +1,13 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import {
-  faEye,
-  faEyeSlash,
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import { faCircleUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"; // ✅ importados
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/logo.svg";
 import "./cadastro.css";
 import { auth } from "../services/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 function Cadastro() {
@@ -115,8 +111,8 @@ function Cadastro() {
             </li>
           </ul>
           {/* ÍCONE PERFIL - DIREITA */}
-         <Link className="perfil" to="/login" onClick={closeMenu}>
-          <FontAwesomeIcon icon={faUserCircle} className="icone-perfil" />
+          <Link className="perfil" to="/">
+            <FontAwesomeIcon icon={faCircleUser} className="icone-perfil" />
           </Link>
 
         </nav>
