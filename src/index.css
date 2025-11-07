@@ -134,15 +134,33 @@ header nav {
 }
 
 /* PERFIL RESPONSIVO */
-.perfil i {
-  color: var(--secondary-azul-iara);
-  font-size: clamp(2rem, 4vw, 3rem);
-  transition: transform 0.5s ease-in-out;
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  outline: none;
+  cursor: pointer;
 }
 
-.perfil i:hover {
-  transform: scale(1.1);
+.perfil i,
+.perfil svg {
+  color: var(--secondary-azul-iara);
+  font-size: clamp(2rem, 4vw, 3rem);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
+
+.perfil i:hover,
+.perfil svg:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.2));
+}
+
+.perfil:focus,
+.logo:focus {
+  outline: none; /* remove o quadrado de foco */
+}
+
 
 /* MAIN CONTENT */
 main {
@@ -167,8 +185,8 @@ footer {
 }
 
 .footer {
-  background: var(--gradiente-1);
-  padding: 2rem 5%;
+   background: var(--gradiente-1);
+  padding: 2% 5%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -176,7 +194,7 @@ footer {
 
 .decoracao {
   background: url(./assets/background-inferior.svg) repeat-x top center;
-  height: clamp(100px, 15vw, 200px);
+  height: 200px;
   width: 100%;
 }
 
@@ -189,18 +207,17 @@ footer {
   display: flex;
   justify-content: flex-end;
   gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .icones a {
   color: var(--base-0);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 2.5rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icones a:hover {
   color: var(--secondary-azul);
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .links {
@@ -215,7 +232,6 @@ footer {
   color: var(--base-0);
   font-weight: 600;
   text-decoration: none;
-  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
   transition: color 0.3s ease;
 }
 
@@ -223,17 +239,25 @@ footer {
   color: var(--secondary-azul);
 }
 
-.legal {
-  color: var(--base-0);
-  font-size: clamp(0.7rem, 1vw, 0.8rem);
-  width: 100%;
-  line-height: 1.4;
-  margin-bottom: 1rem;
+.informacoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.contato {
-  color: var(--secondary-bege);
-  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+.legal {
+  flex: 1 1 60%;
+  font-size: 0.8rem;
+  color: var(--base-0);
+  line-height: 1.4;
+} 
+.contato-botao {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* alinha à esquerda */
+  gap: 0.5rem;
 }
 
 .contato a {
@@ -245,11 +269,6 @@ footer {
 
 .contato a:hover {
   color: var(--secondary-azul);
-}
-
-.contato-botao {
-  width: 100%;
-  text-align: center;
 }
 
 /* --------------- ACESSIBILIDADE --------------- */
